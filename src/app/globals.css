@@ -1,9 +1,13 @@
 :root {
+  /* colors */
   --color-background: hsl(0, 0%, 98%);
   --color-elements: hsl(0, 0%, 100%);
   --color-elements--focused: hsl(0, 0%, 95%);
   --color-text: hsl(200, 15%, 8%);
   --color-text-input: hsl(0, 0%, 52%);
+
+  /* layout */
+  --margin-app-x: 50px;
 }
 
 @media (prefers-color-scheme: dark) {

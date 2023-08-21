@@ -29,7 +29,7 @@ export default function Home() {
   }, [regionFilter]);
 
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
       <div className={styles.listOptions}>
         <Dropdown
           placeholder="Filter by region"
@@ -39,6 +39,6 @@ export default function Home() {
       </div>
 
       <CountryList countries={countries} />
-    </main>
+    </div>
   );
 }

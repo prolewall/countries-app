@@ -1,7 +1,7 @@
 .main {
   width: 100%;
   height: 100%;
-  padding: 30px 50px 30px 50px;
+  padding: 30px var(--margin-app-x) 30px var(--margin-app-x);
 }
 
 .listOptions {
