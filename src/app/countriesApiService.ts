@@ -15,9 +15,24 @@ type APICountryInfo = {
   capital: Array<string>;
 };
 
-export async function getCountriesList(): Promise<Array<CountryInfo>> {
+const API_BASE = "https://restcountries.com/v3.1" as const;
+const BASIC_FIELDS = "name,population,region,capital,cca3,flags" as const;
+
+function determineEndpoint(regionFilter: string): string {
+  if (regionFilter === "") {
+    return "all";
+  } else {
+    return `region/${regionFilter}`;
+  }
+}
+
+export async function getCountriesList(
+  regionFilter: string
+): Promise<Array<CountryInfo>> {
+  const endpoint = determineEndpoint(regionFilter);
+
   const response = await fetch(
-    "https://restcountries.com/v3.1/all?fields=name,population,region,capital,cca3,flags"
+    `${API_BASE}/${endpoint}?fields=${BASIC_FIELDS}`
   );
   const data: Array<APICountryInfo> = await response.json();
 

@@ -3,3 +3,9 @@
   height: 100%;
   padding: 30px 50px 30px 50px;
 }
+
+.listOptions {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
