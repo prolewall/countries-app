@@ -2,6 +2,8 @@
   background-color: var(--color-elements);
   padding: 15px var(--margin-app-x) 15px var(--margin-app-x);
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
 }
 
 .title {

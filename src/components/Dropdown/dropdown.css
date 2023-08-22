@@ -12,7 +12,8 @@
   padding: 12px;
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1);
   border: solid var(--color-elements) 2px;
-  transition: border 0.2s;
+  /* added 0 second transition because it fixed some weird issue when switching themes*/
+  transition: all 0s;
 }
 
 .Dropdown .Dropdown__control:hover {
