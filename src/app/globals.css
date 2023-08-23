@@ -8,6 +8,9 @@
 
   /* layout */
   --margin-app-x: 50px;
+
+  /* styling */
+  --border-radius-element: 5px;
 }
 
 :root[data-theme="dark"] {
@@ -17,16 +20,6 @@
   --color-text: hsl(0, 0%, 100%);
   --color-text-input: hsl(0, 0%, 100%);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: hsl(207, 26%, 17%);
-    --color-elements: hsl(209, 23%, 22%);
-    --color-elements--focused: hsl(209, 23%, 40%);
-    --color-text: hsl(0, 0%, 100%);
-    --color-text-input: hsl(0, 0%, 100%);
-  }
-} */
 
 * {
   box-sizing: border-box;
