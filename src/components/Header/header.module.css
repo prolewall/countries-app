@@ -9,3 +9,9 @@
 .title {
   font-size: 18px;
 }
+
+.link:focus-visible {
+  outline: 2px solid var(--color-elements--focused);
+  outline-offset: 5px;
+  border-radius: 5px;
+}
