@@ -1,14 +1,17 @@
-.container {
+.toggle {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   width: 100px;
+  background-color: inherit;
+  border: none;
+  color: var(--color-text);
 }
 
-label.container:hover,
-label.container:focus-within {
+.toggle:hover,
+.toggle:focus-visible {
   outline: var(--color-elements--focused) solid 2px;
   border-radius: 5px;
   outline-offset: 5px;
@@ -23,12 +26,4 @@ label.container:focus-within {
   width: 20px;
   height: 20px;
   color: var(--color-text);
-}
-
-input.input {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  opacity: 0;
-  position: absolute;
 }

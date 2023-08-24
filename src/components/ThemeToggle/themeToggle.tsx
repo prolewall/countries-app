@@ -27,8 +27,8 @@ const ThemeToggle: FC = () => {
     document.documentElement.setAttribute("data-theme", initialTheme);
   }, []);
 
-  const handleThemeChange = (isDarkMode: boolean) => {
-    const newTheme = isDarkMode ? "dark" : "light";
+  const handleThemeChange = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
 
     window.localStorage.setItem("theme", newTheme);
@@ -36,17 +36,7 @@ const ThemeToggle: FC = () => {
   };
 
   return (
-    <label htmlFor="theme" className={styles.container}>
-      <input
-        className={styles.input}
-        type="checkbox"
-        name="theme"
-        id="theme"
-        checked={theme === "dark"}
-        onChange={(event) => {
-          handleThemeChange(event.target.checked);
-        }}
-      ></input>
+    <button className={styles.toggle} onClick={handleThemeChange}>
       {theme === "dark" ? (
         <MoonIcon className={styles.icon} />
       ) : (
@@ -54,7 +44,7 @@ const ThemeToggle: FC = () => {
       )}
 
       <p className={styles.label}>{theme === "dark" ? "Dark" : "Light"} mode</p>
-    </label>
+    </button>
   );
 };
 

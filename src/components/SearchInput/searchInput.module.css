@@ -21,7 +21,7 @@
 }
 
 .button:hover,
-.button:focus {
+.button:focus-visible {
   outline: 2px var(--color-elements--focused) solid;
   border-radius: 5px;
   outline-offset: 5px;
