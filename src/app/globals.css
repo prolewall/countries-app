@@ -5,6 +5,7 @@
   --color-elements--focused: hsl(210, 3%, 38%);
   --color-text: hsl(200, 15%, 8%);
   --color-text-input: hsl(0, 0%, 52%);
+  --color-loading: hsl(0, 0%, 52%);
 
   /* layout */
   --margin-app-x: 50px;
@@ -19,6 +20,7 @@
   --color-elements--focused: hsl(209, 23%, 40%);
   --color-text: hsl(0, 0%, 100%);
   --color-text-input: hsl(0, 0%, 100%);
+  --color-loading: hsl(209, 23%, 22%);
 }
 
 * {
@@ -31,11 +33,15 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 body {
   color: var(--color-text);
   background: var(--color-background);
+  display: flex;
+  flex-flow: column;
 }
 
 a {

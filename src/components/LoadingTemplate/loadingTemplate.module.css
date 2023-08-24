@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.icon {
+  color: var(--color-loading);
+  height: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

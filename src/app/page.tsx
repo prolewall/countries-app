@@ -15,13 +15,16 @@ const REGIONS = ["Africa", "America", "Asia", "Europe", "Oceania"] as const;
 
 export default function Home() {
   const [countries, setCountries] = useState<Array<CountryInfo>>([]);
-  const [regionFilter, setRegionFilter] = useState<string>("");
-  const [searchValue, setSearchValue] = useState<string>("");
+  const [regionFilter, setRegionFilter] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const fetchCountries = async () => {
       const countries = await getCountriesList(searchValue, regionFilter);
       setCountries(countries);
+      setLoading(false);
     };
     fetchCountries().catch(console.error);
   }, [searchValue, regionFilter]);
@@ -39,8 +42,9 @@ export default function Home() {
           onChange={setRegionFilter}
         />
       </div>
-
-      <CountryList countries={countries} />
+      <div className={styles.content}>
+        <CountryList countries={countries} loading={loading} />
+      </div>
     </main>
   );
 }
