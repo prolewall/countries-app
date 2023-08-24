@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import CountryList from "@/components/CountryList/countryList";
 import Dropdown from "@/components/Dropdown/dropdown";
+import SearchInput from "@/components/SearchInput/searchInput";
 
 import { CountryInfo } from "@/domain/types";
 
@@ -15,26 +16,27 @@ const REGIONS = ["Africa", "America", "Asia", "Europe", "Oceania"] as const;
 export default function Home() {
   const [countries, setCountries] = useState<Array<CountryInfo>>([]);
   const [regionFilter, setRegionFilter] = useState<string>("");
-
-  const onDropdownValueChange = useCallback((newValue: string) => {
-    setRegionFilter(newValue);
-  }, []);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   useEffect(() => {
     const fetchCountries = async () => {
-      const countries = await getCountriesList(regionFilter);
+      const countries = await getCountriesList(searchValue, regionFilter);
       setCountries(countries);
     };
     fetchCountries().catch(console.error);
-  }, [regionFilter]);
+  }, [searchValue, regionFilter]);
 
   return (
     <main className={styles.main}>
       <div className={styles.listOptions}>
+        <SearchInput
+          placeholderText="Search for a country..."
+          searchCallback={setSearchValue}
+        />
         <Dropdown
           placeholder="Filter by region"
           values={REGIONS}
-          onChange={onDropdownValueChange}
+          onChange={setRegionFilter}
         />
       </div>
 
