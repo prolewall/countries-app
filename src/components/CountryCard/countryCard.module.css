@@ -3,6 +3,14 @@
   width: 220px;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card:focus,
+.card:hover {
+  transform: scale(1.1);
+  outline: none;
 }
 
 .flagImage {

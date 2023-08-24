@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FC } from "react";
+import { useRouter } from "next/navigation";
+import { FC, useCallback } from "react";
 
 import { CountryInfo } from "@/domain/types";
 
@@ -10,8 +11,27 @@ interface CountryCardProps {
 }
 
 const CountryCard: FC<CountryCardProps> = ({ countryInfo }) => {
+  const router = useRouter();
+  const handleClick = useCallback(() => {
+    router.push(`/country/${countryInfo.code}`);
+  }, [router, countryInfo]);
+
+  const handleKeyboardEvent = useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === "Enter") {
+        handleClick();
+      }
+    },
+    [handleClick]
+  );
+
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      tabIndex={0}
+      onClick={handleClick}
+      onKeyDown={handleKeyboardEvent}
+    >
       <div className={styles.flagImage}>
         <Image
           src={countryInfo.flagImageUrl}
