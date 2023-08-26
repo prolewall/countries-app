@@ -9,7 +9,7 @@
   outline: none;
 }
 
-.button:focus,
+.button:focus-visible,
 .button:hover {
   outline: 2px solid var(--color-elements--focused);
 }

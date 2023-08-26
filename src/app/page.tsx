@@ -8,7 +8,7 @@ import SearchInput from "@/components/SearchInput/searchInput";
 
 import { CountryInfo } from "@/domain/types";
 
-import { getCountriesList } from "./countriesApiService";
+import { getCountriesList } from "../domain/countriesApiService";
 import styles from "./page.module.css";
 
 const REGIONS = ["Africa", "America", "Asia", "Europe", "Oceania"] as const;
