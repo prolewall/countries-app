@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Description
 
-## Getting Started
+This project was created as a [challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) for [Frontend Mentor](https://www.frontendmentor.io). It's a web application which uses [REST Countries API](https://restcountries.com) to display list of countries with filter and search functionality, as well as separate page with details of each individual country.
 
-First, run the development server:
+The app was built using Next.js React framework, and uses TypeScript nad [CSS Modules](https://nextjs.org/docs/app/building-your-application/styling/css-modules)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The app is hosted on Vercel: [https://prolewall.github.io/calculator-app/](https://countries-app-phi-ten.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can clone the repository and in the project directory run the following commands (requires yarn installed):
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### `yarn dev`
 
-## Learn More
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `yarn test`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Launches the test runner in the interactive watch mode.
 
-## Deploy on Vercel
+### `yarn prettier:check`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run a prettier check for all the files in `src` directory and reports files with styling violations.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### `yarn prettier:fix`
+
+Fix all prettier styling violations in `src` directory.
