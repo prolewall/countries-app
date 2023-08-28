@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import Button from "@/components/Button/button";
 import CountryDetails from "@/components/CountryDetails/countryDetails";
@@ -20,6 +20,7 @@ export default function CountryDetailsPage({
 }) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | undefined>(undefined);
   const [country, setCountry] = useState<DetailCountryInfo | undefined>();
 
   useEffect(() => {
@@ -29,7 +30,10 @@ export default function CountryDetailsPage({
       setCountry(country);
       setLoading(false);
     };
-    fetchCountry().catch(console.error);
+    fetchCountry().catch((error) => {
+      setLoading(false);
+      setError(error.message);
+    });
   }, [params]);
 
   return (
@@ -42,7 +46,9 @@ export default function CountryDetailsPage({
         />
       </div>
       <div className={styles.content}>
-        {loading || !country ? (
+        {error ? (
+          <div className={styles.error}>{error}</div>
+        ) : loading || !country ? (
           <LoadingTemplate />
         ) : (
           <CountryDetails country={country} />
