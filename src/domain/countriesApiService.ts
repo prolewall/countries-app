@@ -60,7 +60,9 @@ export async function getCountryDetails(
 
     return mapToDomainCountryDetails(data, borderCountries);
   } else if (response.status === 404) {
-    throw new Error("Page not found");
+    throw new Error("Country not found");
+  } else if (response.status === 400) {
+    throw new Error("Invalid country code");
   } else {
     throw new Error("Something went wrong");
   }
