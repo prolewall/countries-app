@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { FC, useCallback } from "react";
 
 import { CountryInfo } from "@/domain/types";
+import { formatNumber } from "@/domain/utils";
 
 import styles from "./countryCard.module.css";
 
@@ -45,7 +46,7 @@ const CountryCard: FC<CountryCardProps> = ({ countryInfo }) => {
         <div className={styles.details}>
           <p>
             <span className={styles.label}>Population:</span>{" "}
-            {countryInfo.population}
+            {formatNumber(countryInfo.population)}
           </p>
           <p>
             <span className={styles.label}>Region:</span> {countryInfo.region}
