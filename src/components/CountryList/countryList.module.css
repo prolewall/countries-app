@@ -9,3 +9,18 @@
   flex-wrap: wrap;
   gap: 40px;
 }
+
+.card {
+  max-width: 280px;
+  min-width: 220px;
+  width: 220px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+@media (max-width: 600px) {
+  .list {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -6,11 +6,13 @@ import styles from "./searchInput.module.css";
 
 interface SearchInputProps {
   placeholderText: string;
+  className?: string;
   searchCallback: (searchValue: string) => void;
 }
 
 const SearchInput: FC<SearchInputProps> = ({
   placeholderText,
+  className,
   searchCallback,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -25,7 +27,10 @@ const SearchInput: FC<SearchInputProps> = ({
   };
 
   return (
-    <form className={styles.container} onSubmit={handleSearch}>
+    <form
+      className={`${styles.container} ${className}`}
+      onSubmit={handleSearch}
+    >
       <button className={styles.button}>
         <SearchIcon className={styles.icon} />
       </button>

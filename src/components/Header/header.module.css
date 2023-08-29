@@ -4,6 +4,7 @@
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .title {
@@ -14,4 +15,10 @@
   outline: 2px solid var(--color-elements--focused);
   outline-offset: 5px;
   border-radius: 5px;
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 14px;
+  }
 }

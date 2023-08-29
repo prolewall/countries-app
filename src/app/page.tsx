@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import CountryList from "@/components/CountryList/countryList";
 import Dropdown from "@/components/Dropdown/dropdown";
@@ -33,6 +33,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.listOptions}>
         <SearchInput
+          className={styles.searchInput}
           placeholderText="Search for a country..."
           searchCallback={setSearchValue}
         />
