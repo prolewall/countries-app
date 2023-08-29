@@ -9,9 +9,10 @@ import styles from "./countryCard.module.css";
 
 interface CountryCardProps {
   countryInfo: CountryInfo;
+  className?: string;
 }
 
-const CountryCard: FC<CountryCardProps> = ({ countryInfo }) => {
+const CountryCard: FC<CountryCardProps> = ({ countryInfo, className }) => {
   const router = useRouter();
   const handleClick = useCallback(() => {
     router.push(`/country/${countryInfo.code}`);
@@ -28,7 +29,7 @@ const CountryCard: FC<CountryCardProps> = ({ countryInfo }) => {
 
   return (
     <div
-      className={styles.card}
+      className={`${styles.card} ${className}`}
       tabIndex={0}
       onClick={handleClick}
       onKeyDown={handleKeyboardEvent}

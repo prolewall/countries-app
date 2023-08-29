@@ -1,7 +1,5 @@
 .container {
   composes: elementContainerRounded from "src/styles/common.module.css";
-  min-width: 200px;
-  width: 500px;
   min-height: 50px;
   display: flex;
   align-items: center;

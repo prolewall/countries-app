@@ -6,7 +6,7 @@
 }
 
 .Dropdown .Dropdown__control {
-  min-width: 200px;
+  width: 200px;
   min-height: 50px;
   border: none;
   padding: 12px;

@@ -20,7 +20,11 @@ const CountryList: FC<CountryListProps> = ({ countries, loading }) => {
       ) : (
         <div className={styles.list}>
           {countries.map((country, index) => (
-            <CountryCard countryInfo={country} key={index} />
+            <CountryCard
+              countryInfo={country}
+              className={styles.card}
+              key={index}
+            />
           ))}
         </div>
       )}

@@ -11,9 +11,26 @@
   display: flex;
   justify-content: space-between;
   flex: 0 1 auto;
+  gap: 20px;
 }
 
 .content {
   flex: 1 1 auto;
   padding-bottom: 30px;
+}
+
+.searchInput {
+  min-width: 200px;
+  max-width: 500px;
+  flex-grow: 1;
+}
+
+@media (max-width: 600px) {
+  .listOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0 1 auto;
+    gap: 20px;
+  }
 }
