@@ -54,3 +54,9 @@ a {
     color-scheme: dark;
   }
 }
+
+@media (max-width: 500px) {
+  :root {
+    --margin-app-x: 25px;
+  }
+}

@@ -25,8 +25,9 @@ const CountryDetails: FC<CountryDetailsProps> = ({ country }) => {
         <Image
           src={country.flagImageUrl}
           alt={`Flag of ${country.name}`}
-          fill={true}
           className={styles.flagImage}
+          priority
+          fill
         />
       </div>
       <div className={styles.details}>

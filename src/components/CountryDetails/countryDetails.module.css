@@ -2,29 +2,28 @@
   width: 100%;
   height: 100%;
   display: flex;
+  gap: 30px;
   font-size: 16px;
 }
 
 .flagContainer {
-  width: 50%;
-  height: 400px;
+  min-width: 50%;
   position: relative;
-  /* background-color: green; */
+  flex-grow: 1;
 }
 
 .flagImage {
   object-fit: contain;
+  object-position: 0 0;
 }
 
 .details {
-  margin-left: 30px;
   padding: 40px 0 0 0;
-  width: 50%;
 }
 
 .name {
   margin-bottom: 30px;
-  font-size: 30px;
+  font-size: 2em;
 }
 
 .properties {
@@ -37,6 +36,7 @@
 
 .propertyGroup {
   line-height: 30px;
+  width: 50%;
 }
 
 .propertyLabel {
@@ -49,4 +49,60 @@
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .properties {
+    flex-direction: column;
+  }
+
+  .propertyGroup {
+    width: 100%;
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+
+  .flagContainer {
+    max-width: 100%;
+    position: relative;
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .flagContainer {
+    width: 100%;
+    height: 250px;
+    flex-grow: 1;
+  }
+
+  .details {
+    padding: 0;
+  }
+
+  .flagImage {
+    object-position: 50% 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .flagContainer {
+    height: 200px;
+  }
+
+  .container {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 300px) {
+  .flagContainer {
+    height: 150px;
+  }
 }
