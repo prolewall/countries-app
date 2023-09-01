@@ -41,7 +41,7 @@ export default function CountryDetailsPage({
       <div className={styles.actions}>
         <Button
           onClickCallback={() => router.back()}
-          icon={<BackIcon style={{ width: "100%", height: "100%" }} />}
+          icon={<BackIcon style={{ width: "20px", height: "20px" }} />}
           text="Back"
         />
       </div>

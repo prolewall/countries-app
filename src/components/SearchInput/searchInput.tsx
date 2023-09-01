@@ -1,5 +1,6 @@
 import { FC, FormEvent, useRef, useState } from "react";
 
+import Button from "../Button/button";
 import ClearIcon from "./clear.svg";
 import SearchIcon from "./search.svg";
 import styles from "./searchInput.module.css";
@@ -31,9 +32,10 @@ const SearchInput: FC<SearchInputProps> = ({
       className={`${styles.container} ${className}`}
       onSubmit={handleSearch}
     >
-      <button className={styles.button}>
-        <SearchIcon className={styles.icon} />
-      </button>
+      <Button
+        variant="inline"
+        icon={<SearchIcon style={{ width: "15px", height: "15px" }} />}
+      />
 
       <input
         ref={inputRef}
@@ -42,9 +44,12 @@ const SearchInput: FC<SearchInputProps> = ({
         placeholder={placeholderText}
       ></input>
 
-      <button type="reset" className={styles.button} onClick={handleReset}>
-        <ClearIcon className={styles.icon} />
-      </button>
+      <Button
+        onClickCallback={handleReset}
+        variant="inline"
+        icon={<ClearIcon style={{ width: "15px", height: "15px" }} />}
+        type="reset"
+      />
     </form>
   );
 };
