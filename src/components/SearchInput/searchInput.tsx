@@ -1,4 +1,5 @@
 import { FC, FormEvent, useRef, useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 import Button from "../Button/button";
 import ClearIcon from "./clear.svg";
@@ -28,29 +29,39 @@ const SearchInput: FC<SearchInputProps> = ({
   };
 
   return (
-    <form
-      className={`${styles.container} ${className}`}
-      onSubmit={handleSearch}
-    >
-      <Button
-        variant="inline"
-        icon={<SearchIcon style={{ width: "15px", height: "15px" }} />}
-      />
+    <>
+      <form
+        className={`${styles.container} ${className}`}
+        onSubmit={handleSearch}
+      >
+        <Button
+          id="search-button"
+          variant="inline"
+          icon={<SearchIcon style={{ width: "15px", height: "15px" }} />}
+        />
+        <Tooltip anchorSelect="#search-button" place="top">
+          Search
+        </Tooltip>
 
-      <input
-        ref={inputRef}
-        className={styles.input}
-        type="text"
-        placeholder={placeholderText}
-      ></input>
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type="text"
+          placeholder={placeholderText}
+        ></input>
 
-      <Button
-        onClickCallback={handleReset}
-        variant="inline"
-        icon={<ClearIcon style={{ width: "15px", height: "15px" }} />}
-        type="reset"
-      />
-    </form>
+        <Button
+          id="search-reset-button"
+          onClickCallback={handleReset}
+          variant="inline"
+          icon={<ClearIcon style={{ width: "15px", height: "15px" }} />}
+          type="reset"
+        />
+        <Tooltip anchorSelect="#search-reset-button" place="top">
+          Reset search
+        </Tooltip>
+      </form>
+    </>
   );
 };
 
