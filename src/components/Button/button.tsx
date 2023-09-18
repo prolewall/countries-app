@@ -11,6 +11,7 @@ interface ButtonProps {
   className?: string;
   variant?: ButtonVariant;
   type?: "submit" | "reset" | "button" | undefined;
+  id?: string;
 }
 
 function determineButtonClass(variant?: ButtonVariant): string {
@@ -30,11 +31,13 @@ const Button: FC<ButtonProps> = ({
   text,
   variant,
   type,
+  id,
 }) => {
   const buttonClass = determineButtonClass(variant);
 
   return (
     <button
+      id={id}
       className={buttonClass}
       onClick={onClickCallback}
       type={type ?? "submit"}
